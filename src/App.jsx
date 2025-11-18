@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import app from './firebase'
+import { getAuth, signOut } from 'firebase/auth';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+
 import Sueños from './componentes/Sueños'
 import Comunes from './componentes/comunes'
 import Pesadillas from './componentes/pesadillas'
@@ -13,6 +16,9 @@ import HoroscopoTarot from './componentes/HoroscopoTarot'
 import Tarod from './componentes/Tarod'
 import TarotBooking from './componentes/reserva'
 import TarotReviewDashboard from './componentes/opiniones'
+import LoginUsuario from './componentes/login'
+import RegistrarCuenta from './componentes/RegistrarCuenta';
+import RutaPrivada from './componentes/RutaPrivada';
 
 function App() {
 
@@ -28,8 +34,16 @@ function App() {
         <Route path='/horoscopo' element={<HoroscopoTarot/>}/>
         <Route path='/tarod' element={<Tarod/>}/>
         <Route path='/numero' element={<SeccionNumerologia/>}/>
-        <Route path='/reserva' element={<TarotBooking/>}/>
+        <Route path='/reserva' element={
+          <>
+            <RutaPrivada>
+              <TarotBooking/>         
+            </RutaPrivada>
+          </>
+          }/>
         <Route path='/opiniones' element={<TarotReviewDashboard/>}/>
+        <Route path="/iniciar" element={<LoginUsuario />} />
+        <Route path="/registrarse" element={<RegistrarCuenta />} />
        </Routes>
      </BrowserRouter>
     </>

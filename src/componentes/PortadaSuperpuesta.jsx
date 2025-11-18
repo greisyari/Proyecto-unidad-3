@@ -4,14 +4,6 @@ import { Link } from "react-router-dom";
 const PortadaSuperpuesta = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navLinks = [
-    { name: "Inicio", href: "#inicio" },
-    { name: "Tarot", href: "#Tarot" },
-    { name: "Horóscopo", href: "#horoscopo" },
-    { name: "Sueños", href: "#sueños" },
-    { name: "Numerologia", href: "#numerologia" },
-  ];
-
   return (
     <div className="relative min-h-screen bg-gray-900 overflow-hidden">
       
@@ -45,15 +37,18 @@ const PortadaSuperpuesta = () => {
           {/* Enlaces Desktop */}
           <div className="hidden md:block">
             <div className="flex items-center space-x-6 lg:space-x-8">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
+                <Link
+                  to="/iniciar"
                   className="text-gray-100 text-lg hover:text-white hover:underline underline-offset-4 transition duration-200"
                 >
-                  {link.name}
-                </a>
-              ))}
+                  Iniciar sección
+                </Link>
+                <Link
+                  to="/registrarse"
+                  className="text-gray-100 text-lg hover:text-white hover:underline underline-offset-4 transition duration-200"
+                >
+                  Registrarse
+                </Link>
               {/* Botón de acción similar al de la imagen "Book Now" */}
               <Link
             className="ml-6 px-6 py-2 bg-gradient-to-r from-pink-600 to-purple-700 text-white font-semibold rounded-full shadow-lg hover:opacity-90 transition duration-300 transform hover:scale-105"
@@ -159,7 +154,13 @@ const PortadaSuperpuesta = () => {
           </Link>
         </div>
       </div>
-  
+
+      <div className="relative z-20 flex flex-col items-center justify-center h-full text-center text-white p-8 pt-24 md:pt-32">
+        <p className="text-xl md:text-base text-gray-200 max-w-3xl mb-10 font-light leading-relaxed">
+          Para reservar consulta debes iniciar sesión o resgristrarte
+        </p>
+      </div>
+
     </div>
   );
 };
