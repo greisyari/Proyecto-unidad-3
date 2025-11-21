@@ -105,7 +105,6 @@ const PortadaSuperpuesta = () => {
                   key={link.name}
                   href={link.href}
                   className="text-gray-100 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition duration-200"
-                  onClick={() => setIsOpen(false)}
                 >
                   {link.name}
                 </a>
