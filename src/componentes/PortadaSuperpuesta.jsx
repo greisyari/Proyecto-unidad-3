@@ -2,6 +2,15 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 
 const PortadaSuperpuesta = () => {
+  // 🔥 AQUI agregamos navLinks
+  const navLinks = [
+    { name: "Iniciar sesión", href: "/iniciar" },
+    { name: "Registrarse", href: "/registrarse" },
+    { name: "Opiniones", href: "/opiniones" },
+    { name: "Reservar Consulta", href: "/reserva" }
+  ];
+
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (
