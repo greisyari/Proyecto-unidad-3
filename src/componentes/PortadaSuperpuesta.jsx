@@ -7,7 +7,6 @@ const PortadaSuperpuesta = () => {
     { name: "Iniciar sesión", href: "/iniciar" },
     { name: "Registrarse", href: "/registrarse" },
     { name: "Opiniones", href: "/opiniones" },
-    { name: "Reservar Consulta", href: "/reserva" }
   ];
 
 
