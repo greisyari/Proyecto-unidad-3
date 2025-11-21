@@ -3,11 +3,7 @@ import { Link } from "react-router-dom";
 
 const PortadaSuperpuesta = () => {
   // 🔥 AQUI agregamos navLinks
-  const navLinks = [
-    { name: "Iniciar sesión", href: "/iniciar" },
-    { name: "Registrarse", href: "/registrarse" },
-    { name: "Opiniones", href: "/opiniones" },
-  ];
+  
 
 
   const [isOpen, setIsOpen] = useState(false);
@@ -100,15 +96,7 @@ const PortadaSuperpuesta = () => {
         {isOpen && (
           <div className="md:hidden mt-3 bg-gray-800/90 rounded-md py-2 px-2" id="mobile-menu">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-gray-100 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition duration-200"
-                >
-                  {link.name}
-                </a>
-              ))}
+              
               <Link
                 className="mt-3 w-full px-4 py-2 bg-gradient-to-r from-pink-600 to-purple-700 text-white font-semibold rounded-md shadow-md hover:opacity-90 transition duration-300"
                 to="/reserva"
